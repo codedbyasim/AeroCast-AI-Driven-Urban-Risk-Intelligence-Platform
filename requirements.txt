@@ -1,0 +1,25 @@
+# AeroCast — M1 Data Ingestion Layer Dependencies
+# Python 3.10+ / 3.11 / 3.12 compatible
+
+# Async HTTP Client & Retries
+httpx
+tenacity
+
+# Geospatial & Raster Processing
+geopandas
+shapely
+rasterio
+numpy
+pandas
+pyproj
+
+# Schema Validation & Settings
+pydantic
+python-dotenv
+
+# Background Job Scheduling
+apscheduler
+
+# Testing Framework
+pytest
+pytest-asyncio

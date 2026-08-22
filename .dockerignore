@@ -1,0 +1,12 @@
+.git
+.gitignore
+.env
+.cache
+.pytest_cache
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+*.zip
+context.md
+SRS.md

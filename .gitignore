@@ -1,0 +1,23 @@
+# Environment Variables & Secrets
+.env
+.env.local
+
+# Internal Specification & Planning Documents
+context.md
+SRS.md
+
+# Archives
+*.zip
+
+# Local Cache & Runtime Data
+.cache/
+.pytest_cache/
+__pycache__/
+*.py[cod]
+*$py.class
+
+# OS / Editor Files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
