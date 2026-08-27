@@ -111,6 +111,26 @@ def sync_historical(days: int = 730) -> Dict[str, Any]:
         return asyncio.run(sched.fetch_historical_dataset(days=days))
 
 
+def get_live_fire_telemetry(days: int = 1, force_refresh: bool = False) -> Dict[str, Any]:
+    """
+    Fetch active satellite crop residue fire hotspots and Fire Radiative Power (FRP)
+    from NASA FIRMS VIIRS 375m sensor across Lahore and the transboundary corridor.
+    """
+    from ingestion.firms_client import NasaFirmsClient
+    client = NasaFirmsClient()
+    try:
+        loop = asyncio.get_event_loop()
+        if loop.is_running():
+            # If in async context, run synchronously via thread or executor
+            import concurrent.futures
+            with concurrent.futures.ThreadPoolExecutor() as pool:
+                return pool.submit(asyncio.run, client.fetch_active_fires(days=days, force_refresh=force_refresh)).result()
+        else:
+            return loop.run_until_complete(client.fetch_active_fires(days=days, force_refresh=force_refresh))
+    except RuntimeError:
+        return asyncio.run(client.fetch_active_fires(days=days, force_refresh=force_refresh))
+
+
 def get_ingestion_health() -> Dict[str, Any]:
     """
     Check health status and availability of ingestion cache and Zones.

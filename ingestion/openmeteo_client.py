@@ -105,8 +105,22 @@ class OpenMeteoClient:
                 "raw_response": raw_data,
             }
         except Exception as e:
-            logger.error("Error fetching Open-Meteo forecast: %s. Using tagged synthetic fallback.", e)
-            return self._generate_fallback_weather(target_lat, target_lon, reason=f"Open-Meteo error: {str(e)}")
+            logger.error("Error fetching Open-Meteo forecast: %s", e)
+            return {
+                "latitude": target_lat,
+                "longitude": target_lon,
+                "elevation": 214.0,
+                "temperature_c": None,
+                "relative_humidity_percent": None,
+                "rainfall_mm_forecast": 0.0,
+                "wind_speed_kmh": None,
+                "surface_pressure_hpa": None,
+                "timestamp_utc": datetime.now(timezone.utc).isoformat(),
+                "source": "Open-Meteo",
+                "is_fallback": False,
+                "fallback_reason": None,
+                "error": f"Open-Meteo forecast fetch failed: {str(e)}",
+            }
 
     async def fetch_grid_weather(self) -> List[Dict[str, Any]]:
         """
@@ -117,12 +131,10 @@ class OpenMeteoClient:
             try:
                 weather = await self.fetch_current_and_forecast(lat=pt["lat"], lon=pt["lon"])
                 weather["grid_point_name"] = pt["name"]
-                results.append(weather)
+                if weather.get("temperature_c") is not None:
+                    results.append(weather)
             except Exception as err:
                 logger.warning("Failed grid fetch for %s: %s", pt["name"], err)
-                results.append(self._generate_fallback_weather(
-                    pt["lat"], pt["lon"], name=pt["name"], reason=f"Grid point fetch failure: {str(err)}"
-                ))
 
         return results
 
@@ -170,27 +182,6 @@ class OpenMeteoClient:
                 "longitude": target_lon,
                 "daily": {},
                 "source": "Open-Meteo-Archive",
-                "is_fallback": True,
-                "fallback_reason": f"Historical weather API fetch failed: {str(e)}",
+                "is_fallback": False,
+                "error": f"Historical weather API fetch failed: {str(e)}",
             }
-
-    def _generate_fallback_weather(
-        self, lat: float, lon: float, name: str = "Lahore Central", reason: str = "synthetic fallback — Open-Meteo API unreachable"
-    ) -> Dict[str, Any]:
-        """Generate realistic weather snapshot for Lahore when API is unreachable."""
-        import random
-        return {
-            "latitude": lat,
-            "longitude": lon,
-            "elevation": 214.0,
-            "temperature_c": round(34.5 + random.uniform(-2.5, 3.5), 1),
-            "relative_humidity_percent": round(58.0 + random.uniform(-10, 15), 1),
-            "rainfall_mm_forecast": round(max(0.0, random.uniform(0.0, 12.0)), 1),
-            "wind_speed_kmh": round(12.0 + random.uniform(-4, 6), 1),
-            "surface_pressure_hpa": 1012.5,
-            "timestamp_utc": datetime.now(timezone.utc).isoformat(),
-            "source": "Open-Meteo-Synthetic",
-            "grid_point_name": name,
-            "is_fallback": True,
-            "fallback_reason": reason,
-        }

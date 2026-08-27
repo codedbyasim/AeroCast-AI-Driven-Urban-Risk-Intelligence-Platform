@@ -21,3 +21,7 @@ __pycache__/
 Thumbs.db
 .vscode/
 .idea/
+
+# Temp Data & Scratch Files
+data/temp_rasters/
+scratch/

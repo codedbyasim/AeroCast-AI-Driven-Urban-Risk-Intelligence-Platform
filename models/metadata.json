@@ -1,0 +1,83 @@
+{
+  "model_version": "v1.0",
+  "timestamp_utc": "2026-08-24T03:43:49.855150+00:00",
+  "metrics": {
+    "training_samples": 9215,
+    "test_samples": 2292,
+    "train_date_range": [
+      "2024-08-24",
+      "2026-08-22"
+    ],
+    "test_date_range": [
+      "2024-08-28",
+      "2026-08-23"
+    ],
+    "evaluation_mode": "seasonal_block (all-season representation)",
+    "xgboost_24h": {
+      "mae": 18.92,
+      "rmse": 28.77,
+      "r2": 0.871
+    },
+    "feature_importance_top5_24h": [
+      [
+        "max_adjacent_sensor_pm25",
+        0.4094320833683014
+      ],
+      [
+        "pm25_rolling_mean_24h",
+        0.2090013027191162
+      ],
+      [
+        "pm25_current",
+        0.19979698956012726
+      ],
+      [
+        "pm25_rolling_mean_72h",
+        0.06977404654026031
+      ],
+      [
+        "precipitation_sum",
+        0.013804315589368343
+      ]
+    ],
+    "feature_importance_spatial_features": {
+      "max_adjacent_sensor_pm25": 0.4094,
+      "wind_downwind_pm25_transport": 0.0033
+    }
+  },
+  "feature_importances": {
+    "24h": {
+      "max_adjacent_sensor_pm25": 0.4094320833683014,
+      "pm25_rolling_mean_24h": 0.2090013027191162,
+      "pm25_current": 0.19979698956012726,
+      "pm25_rolling_mean_72h": 0.06977404654026031,
+      "precipitation_sum": 0.013804315589368343,
+      "is_monsoon": 0.007864732295274734,
+      "pm25_rolling_max_72h": 0.007221049629151821,
+      "sin_day_of_year": 0.007057362701743841,
+      "cos_day_of_year": 0.006636057980358601,
+      "wind_speed_max": 0.006542993243783712,
+      "temp_diurnal_range": 0.006363262422382832,
+      "day_of_year": 0.006279660388827324,
+      "temp_min": 0.005811827722936869,
+      "temp_mean": 0.00556731503456831,
+      "temp_max": 0.0047118873335421085,
+      "month": 0.004383457358926535,
+      "pm25_rolling_max_24h": 0.0036713469307869673,
+      "pm25_lag_48h": 0.0034649770241230726,
+      "wind_downwind_pm25_transport": 0.003307654056698084,
+      "is_smog_season": 0.0032172941137105227,
+      "ndvi_index": 0.0031825744081288576,
+      "pm25_lag_24h": 0.003027845872566104,
+      "elevation_m": 0.0028554231394082308,
+      "road_density_km_per_sqkm": 0.002734665758907795,
+      "impervious_surface_ratio": 0.0022159828804433346,
+      "population_density_per_sqkm": 0.0020739242900162935,
+      "wind_direction_deg": 0.0,
+      "slope_percent": 0.0
+    }
+  },
+  "residual_std": {
+    "24h": 28.4321841388266
+  }
+}

@@ -1,0 +1,2 @@
+M2_Algorithm,Contemporaneous_Station_Selection,Variogram_Fitting_Data,Future_Observations_Used,M2_Future_Dependency,Audit_Classification,Verification_Method
+"Universal Kriging with Spherical Variogram & Dual Covariates (NDVI, Road Density)",Filtered strictly by record_date == query_date,Contemporaneous physical sensor readings active at timestamp t only,False,False,GREEN (Zero Future Dependency),Code trace in spatial/kriging_engine.py at lines 80-160

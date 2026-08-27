@@ -1,0 +1,5 @@
+Partition,Threshold,Total_Actual_Events,True_Positives,False_Negatives,False_Positives,True_Negatives,Recall,Precision,F1_Score,False_Negative_Rate,MAE_on_Events,Mean_Underprediction,P95_Underprediction
+Validation Set (Jan-May 2026),>=100.0 ug/m3,1289,1186,103,249,1977,0.92,0.826,0.871,0.08,27.1,13.89,63.41
+Validation Set (Jan-May 2026),>=150.0 ug/m3,504,389,115,247,2764,0.772,0.612,0.682,0.228,34.9,24.48,94.05
+Final Future Test Set (May-Aug 2026),>=100.0 ug/m3,61,7,54,2,3313,0.115,0.778,0.2,0.885,48.48,48.48,100.09
+Final Future Test Set (May-Aug 2026),>=150.0 ug/m3,6,0,6,1,3369,0.0,0.0,0.0,1.0,104.17,104.17,153.05

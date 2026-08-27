@@ -41,7 +41,10 @@ def test_interface_get_all_uc_data_alias():
     assert len(all_ucs) == len(all_zones)
 
 
-def test_interface_sync_historical():
-    """Test historical data synchronization."""
-    res = sync_historical(days=30)
-    assert res["status"] in ("success", "historical_sync_triggered_async")
+def test_interface_sync_historical(monkeypatch):
+    """Test historical data synchronization interface."""
+    from unittest.mock import AsyncMock, patch
+    with patch("ingestion.scheduler.IngestionScheduler.fetch_historical_dataset", new_callable=AsyncMock) as mock_sync:
+        mock_sync.return_value = {"status": "success", "historical_aqi_records": 7260, "historical_weather_days": 730}
+        res = sync_historical(days=730)
+        assert res["status"] in ("success", "historical_sync_triggered_async")

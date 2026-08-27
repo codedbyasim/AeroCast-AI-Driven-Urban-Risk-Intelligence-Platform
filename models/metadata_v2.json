@@ -1,0 +1,141 @@
+{
+  "model_version": "v2.0",
+  "timestamp_utc": "2026-08-24T07:04:00.943752+00:00",
+  "evaluation_mode": "strict_chronological",
+  "metrics": {
+    "model_version": "v2.0",
+    "evaluation_mode": "strict_chronological",
+    "training_samples": 4616,
+    "validation_samples": 3515,
+    "test_samples": 3376,
+    "train_date_range": [
+      "2024-08-24",
+      "2026-01-15"
+    ],
+    "validation_date_range": [
+      "2026-01-16",
+      "2026-05-05"
+    ],
+    "test_date_range": [
+      "2026-05-06",
+      "2026-08-23"
+    ],
+    "xgboost_24h_test": {
+      "mae": 12.36,
+      "rmse": 16.48,
+      "r2": 0.324
+    },
+    "xgboost_24h_val": {
+      "mae": 20.5,
+      "rmse": 29.87,
+      "r2": 0.762
+    },
+    "metrics_by_pollution_tier": {
+      "low_under_50": {
+        "samples": 2110,
+        "mae": 10.49,
+        "rmse": 12.92,
+        "r2": -1.026
+      },
+      "moderate_50_to_100": {
+        "samples": 1205,
+        "mae": 13.68,
+        "rmse": 17.21,
+        "r2": -0.92
+      },
+      "high_100_to_200": {
+        "samples": 58,
+        "mae": 45.85,
+        "rmse": 48.66,
+        "r2": -13.032
+      },
+      "very_high_over_200": {
+        "samples": 3,
+        "mae": null,
+        "rmse": null,
+        "r2": null
+      }
+    },
+    "metrics_by_season": {
+      "smog_season_nov_jan": {
+        "samples": 2701,
+        "mae": 18.9,
+        "rmse": 29.25,
+        "r2": 0.888
+      },
+      "monsoon_season_jun_sep": {
+        "samples": 4283,
+        "mae": 10.33,
+        "rmse": 13.86,
+        "r2": 0.513
+      },
+      "transition_season_feb_may_oct": {
+        "samples": 4523,
+        "mae": 15.76,
+        "rmse": 21.82,
+        "r2": 0.856
+      }
+    },
+    "feature_importance_top5_24h": [
+      [
+        "pm25_rolling_mean_24h",
+        0.5089802145957947
+      ],
+      [
+        "pm25_current",
+        0.2262023538351059
+      ],
+      [
+        "pm25_rolling_mean_72h",
+        0.07719514518976212
+      ],
+      [
+        "precipitation_sum",
+        0.024325236678123474
+      ],
+      [
+        "cos_day_of_year",
+        0.015935838222503662
+      ]
+    ],
+    "feature_importance_spatial_features": {
+      "max_adjacent_sensor_pm25": 0.0067,
+      "wind_downwind_pm25_transport": 0.0072
+    }
+  },
+  "feature_importances": {
+    "24h": {
+      "pm25_rolling_mean_24h": 0.5089802145957947,
+      "pm25_current": 0.2262023538351059,
+      "pm25_rolling_mean_72h": 0.07719514518976212,
+      "precipitation_sum": 0.024325236678123474,
+      "cos_day_of_year": 0.015935838222503662,
+      "pm25_rolling_max_72h": 0.011730705387890339,
+      "day_of_year": 0.011405643075704575,
+      "temp_min": 0.010239271447062492,
+      "wind_speed_max": 0.00995367206633091,
+      "temp_max": 0.008722224272787571,
+      "pm25_rolling_max_24h": 0.008581808768212795,
+      "temp_diurnal_range": 0.008528148755431175,
+      "temp_mean": 0.00808265432715416,
+      "sin_day_of_year": 0.007882191799581051,
+      "wind_downwind_pm25_transport": 0.007220069412142038,
+      "max_adjacent_sensor_pm25": 0.006664644926786423,
+      "pm25_lag_24h": 0.00640408881008625,
+      "ndvi_index": 0.006322762463241816,
+      "population_density_per_sqkm": 0.005792812444269657,
+      "pm25_lag_48h": 0.005730427801609039,
+      "month": 0.005241003353148699,
+      "road_density_km_per_sqkm": 0.005031429696828127,
+      "impervious_surface_ratio": 0.004685031250119209,
+      "elevation_m": 0.004595872480422258,
+      "is_smog_season": 0.004546770825982094,
+      "wind_direction_deg": 0.0,
+      "is_monsoon": 0.0,
+      "slope_percent": 0.0
+    }
+  },
+  "residual_std": {
+    "24h": 16.467857523410558
+  }
+}

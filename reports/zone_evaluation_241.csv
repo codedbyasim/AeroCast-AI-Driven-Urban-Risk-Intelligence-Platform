@@ -1,0 +1,242 @@
+zone_id,station_type,road_density_km_sqkm,ndvi_index,population_density,total_observations,train_samples,validation_samples,test_samples,MAE,RMSE,R2,Mean_Error_Bias,High_Event_Recall,High_Event_Precision,Severe_Event_Recall,Severe_Event_Precision,Status_Note
+ZONE-LHR-0001,Unmonitored / Spatial Kriging Target,3.02,0.56,780.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0002,Unmonitored / Spatial Kriging Target,2.58,0.39,714.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0003,Unmonitored / Spatial Kriging Target,2.18,0.05,834.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0004,Unmonitored / Spatial Kriging Target,2.0,0.17,821.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0005,Unmonitored / Spatial Kriging Target,4.97,0.05,1292.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0006,Unmonitored / Spatial Kriging Target,3.5,0.15,1192.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0007,Unmonitored / Spatial Kriging Target,3.01,0.28,2029.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0008,Unmonitored / Spatial Kriging Target,2.48,0.17,1012.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0009,Unmonitored / Spatial Kriging Target,2.09,0.79,1224.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0010,Unmonitored / Spatial Kriging Target,6.41,0.25,18495.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0011,Unmonitored / Spatial Kriging Target,6.6,0.51,6946.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0012,Unmonitored / Spatial Kriging Target,6.51,-0.16,2011.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0013,Unmonitored / Spatial Kriging Target,5.85,0.29,1519.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0014,Unmonitored / Spatial Kriging Target,5.34,0.07,1710.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0015,Unmonitored / Spatial Kriging Target,7.79,0.23,1406.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0016,Unmonitored / Spatial Kriging Target,7.03,0.08,6010.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0017,Unmonitored / Spatial Kriging Target,6.35,0.17,1651.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0018,Unmonitored / Spatial Kriging Target,2.3,0.18,816.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0019,Unmonitored / Spatial Kriging Target,2.04,0.48,1156.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0020,Unmonitored / Spatial Kriging Target,7.5,0.04,13673.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0021,Unmonitored / Spatial Kriging Target,8.09,0.35,11234.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0022,Unmonitored / Spatial Kriging Target,8.11,0.33,7107.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0023,Unmonitored / Spatial Kriging Target,14.25,0.21,7264.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0024,Unmonitored / Spatial Kriging Target,9.61,0.73,6260.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0025,Unmonitored / Spatial Kriging Target,8.49,0.37,4799.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0026,Unmonitored / Spatial Kriging Target,4.0,0.02,2917.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0027,Unmonitored / Spatial Kriging Target,3.18,0.61,2928.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0028,Unmonitored / Spatial Kriging Target,2.51,0.03,935.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0029,Unmonitored / Spatial Kriging Target,2.13,0.7,1536.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0030,Unmonitored / Spatial Kriging Target,11.02,0.14,8198.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0031,Unmonitored / Spatial Kriging Target,12.31,0.14,4397.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0032,Direct Physical Station,17.28,0.04,21723.0,329,186,68,75,16.44,25.16,0.956,3.06,0.949,0.961,0.969,0.918,Monitored ground truth station in OpenAQ
+ZONE-LHR-0033,Unmonitored / Spatial Kriging Target,17.23,0.08,13473.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0034,Unmonitored / Spatial Kriging Target,19.19,0.1,11233.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0035,Unmonitored / Spatial Kriging Target,10.5,0.06,10608.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0036,Unmonitored / Spatial Kriging Target,12.54,0.25,14552.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0037,Unmonitored / Spatial Kriging Target,11.35,0.76,8395.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0038,Unmonitored / Spatial Kriging Target,3.41,0.69,11895.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0039,Unmonitored / Spatial Kriging Target,2.67,0.4,4604.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0040,Unmonitored / Spatial Kriging Target,2.08,0.5,3431.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0041,Unmonitored / Spatial Kriging Target,1.78,0.36,2828.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0042,Unmonitored / Spatial Kriging Target,11.29,0.25,4241.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0043,Unmonitored / Spatial Kriging Target,13.16,0.13,11866.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0044,Direct Physical Station,15.87,0.05,13535.0,447,227,110,110,15.82,25.25,0.892,1.1,0.887,0.94,0.945,0.827,Monitored ground truth station in OpenAQ
+ZONE-LHR-0045,Direct Physical Station,15.72,0.05,18037.0,178,178,0,0,15.02,18.46,0.976,1.13,1.0,0.97,1.0,0.929,Monitored ground truth station in OpenAQ
+ZONE-LHR-0046,Unmonitored / Spatial Kriging Target,13.04,0.57,12806.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0047,Unmonitored / Spatial Kriging Target,10.93,0.03,14981.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0048,Unmonitored / Spatial Kriging Target,12.79,0.46,14158.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0049,Direct Physical Station,8.01,0.1,2522.0,221,139,42,40,14.71,20.69,0.945,5.76,0.96,0.814,0.95,0.927,Monitored ground truth station in OpenAQ
+ZONE-LHR-0050,Unmonitored / Spatial Kriging Target,3.51,0.4,3097.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0051,Unmonitored / Spatial Kriging Target,2.73,0.21,3347.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0052,Unmonitored / Spatial Kriging Target,2.13,0.11,1170.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0053,Unmonitored / Spatial Kriging Target,1.67,0.91,1155.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0054,Unmonitored / Spatial Kriging Target,1.5,0.15,4006.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0055,Unmonitored / Spatial Kriging Target,9.46,0.12,1723.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0056,Unmonitored / Spatial Kriging Target,10.77,0.75,3086.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0057,Unmonitored / Spatial Kriging Target,9.13,0.04,15201.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0058,Direct Physical Station,10.95,0.15,12586.0,400,197,108,95,17.49,25.32,0.832,8.67,0.905,0.817,0.944,0.85,Monitored ground truth station in OpenAQ
+ZONE-LHR-0059,Direct Physical Station,14.38,0.18,18112.0,730,510,110,110,13.67,18.65,0.943,1.88,0.958,0.927,0.937,0.841,Monitored ground truth station in OpenAQ
+ZONE-LHR-0060,Direct Physical Station,12.53,0.48,12943.0,276,57,110,109,13.01,18.76,0.802,3.52,0.892,0.795,0.529,0.562,Monitored ground truth station in OpenAQ
+ZONE-LHR-0061,Direct Physical Station,10.68,0.51,8764.0,354,143,110,101,13.63,19.85,0.92,4.1,0.959,0.879,0.89,0.903,Monitored ground truth station in OpenAQ
+ZONE-LHR-0062,Direct Physical Station,9.15,0.33,10385.0,452,232,110,110,14.74,21.49,0.954,2.72,0.915,0.935,0.972,0.922,Monitored ground truth station in OpenAQ
+ZONE-LHR-0063,Direct Physical Station,4.42,0.34,7244.0,27,4,23,0,20.74,27.67,0.655,5.47,0.857,0.857,0.75,0.75,Monitored ground truth station in OpenAQ
+ZONE-LHR-0064,Unmonitored / Spatial Kriging Target,3.45,0.09,5073.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0065,Unmonitored / Spatial Kriging Target,2.7,0.07,1615.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0066,Unmonitored / Spatial Kriging Target,2.1,0.48,960.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0067,Unmonitored / Spatial Kriging Target,1.64,0.04,1049.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0068,Unmonitored / Spatial Kriging Target,1.5,0.06,4007.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0069,Unmonitored / Spatial Kriging Target,7.94,0.23,1352.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0070,Unmonitored / Spatial Kriging Target,8.72,0.1,1190.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0071,Unmonitored / Spatial Kriging Target,6.45,0.14,10550.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0072,Direct Physical Station,7.73,0.13,16033.0,193,24,60,109,15.8,20.08,0.817,0.24,0.846,0.943,0.857,0.72,Monitored ground truth station in OpenAQ
+ZONE-LHR-0073,Direct Physical Station,15.66,0.09,17858.0,287,67,110,110,13.87,19.17,0.894,3.71,0.979,0.869,0.864,0.745,Monitored ground truth station in OpenAQ
+ZONE-LHR-0074,Direct Physical Station,15.63,0.31,18310.0,446,226,110,110,11.96,17.83,0.921,1.44,0.969,0.927,0.878,0.828,Monitored ground truth station in OpenAQ
+ZONE-LHR-0075,Direct Physical Station,11.17,0.43,12445.0,182,24,50,108,12.09,15.26,0.876,3.44,1.0,0.872,0.818,0.643,Monitored ground truth station in OpenAQ
+ZONE-LHR-0076,Unmonitored / Spatial Kriging Target,6.38,0.24,6392.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0077,Unmonitored / Spatial Kriging Target,8.66,0.17,12678.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0078,Unmonitored / Spatial Kriging Target,4.12,0.07,8939.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0079,Unmonitored / Spatial Kriging Target,3.25,0.12,4608.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0080,Unmonitored / Spatial Kriging Target,2.56,0.15,1109.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0081,Unmonitored / Spatial Kriging Target,2.01,0.61,1193.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0082,Unmonitored / Spatial Kriging Target,1.68,0.06,4027.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0083,Unmonitored / Spatial Kriging Target,3.89,0.05,1548.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0084,Unmonitored / Spatial Kriging Target,4.54,0.79,2657.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0085,Direct Physical Station,5.43,0.12,15827.0,314,123,91,100,14.67,22.25,0.949,1.99,0.982,0.957,0.953,0.871,Monitored ground truth station in OpenAQ
+ZONE-LHR-0086,Direct Physical Station,9.76,0.01,15800.0,267,57,106,104,15.46,23.66,0.835,2.13,0.957,0.9,0.846,0.717,Monitored ground truth station in OpenAQ
+ZONE-LHR-0087,Direct Physical Station,13.77,-0.08,18320.0,451,231,110,110,14.72,23.1,0.875,3.72,0.938,0.833,0.905,0.803,Monitored ground truth station in OpenAQ
+ZONE-LHR-0088,Direct Physical Station,6.76,0.11,14391.0,277,60,110,107,13.72,20.14,0.781,3.03,0.915,0.824,0.85,0.773,Monitored ground truth station in OpenAQ
+ZONE-LHR-0089,Unmonitored / Spatial Kriging Target,6.22,0.02,11716.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0090,Direct Physical Station,5.39,0.19,12775.0,164,57,106,1,14.26,20.87,0.803,2.7,0.878,0.823,0.87,0.714,Monitored ground truth station in OpenAQ
+ZONE-LHR-0091,Direct Physical Station,8.0,0.27,10199.0,254,35,110,109,13.93,18.55,0.879,2.96,0.957,0.931,0.919,0.773,Monitored ground truth station in OpenAQ
+ZONE-LHR-0092,Direct Physical Station,3.67,0.25,6868.0,278,59,110,109,13.03,18.17,0.839,1.98,0.902,0.831,0.844,0.75,Monitored ground truth station in OpenAQ
+ZONE-LHR-0093,Unmonitored / Spatial Kriging Target,2.95,0.05,3932.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0094,Unmonitored / Spatial Kriging Target,2.35,0.29,1317.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0095,Unmonitored / Spatial Kriging Target,1.87,0.0,745.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0096,Unmonitored / Spatial Kriging Target,1.5,0.45,1051.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0097,Unmonitored / Spatial Kriging Target,1.5,0.58,1903.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0098,Unmonitored / Spatial Kriging Target,1.99,0.12,1812.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0099,Unmonitored / Spatial Kriging Target,2.63,0.11,1042.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0100,Unmonitored / Spatial Kriging Target,3.19,0.51,5188.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0101,Direct Physical Station,3.82,0.13,18470.0,275,59,107,109,15.64,20.82,0.841,4.73,0.93,0.899,0.829,0.707,Monitored ground truth station in OpenAQ
+ZONE-LHR-0102,Unmonitored / Spatial Kriging Target,7.94,0.38,16161.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0103,Direct Physical Station,8.48,0.38,12591.0,442,223,110,109,11.71,16.32,0.936,3.64,0.942,0.89,0.927,0.773,Monitored ground truth station in OpenAQ
+ZONE-LHR-0104,Direct Physical Station,8.79,0.4,13007.0,71,40,28,3,18.13,24.37,0.86,2.76,0.906,0.873,0.949,0.902,Monitored ground truth station in OpenAQ
+ZONE-LHR-0105,Direct Physical Station,5.28,0.64,16878.0,278,59,110,109,15.62,21.09,0.858,-0.56,0.923,0.897,0.918,0.804,Monitored ground truth station in OpenAQ
+ZONE-LHR-0106,Direct Physical Station,4.95,0.13,13833.0,260,46,110,104,12.68,19.48,0.822,3.31,0.899,0.838,0.905,0.731,Monitored ground truth station in OpenAQ
+ZONE-LHR-0107,Direct Physical Station,4.41,0.37,13012.0,412,206,103,103,12.6,18.31,0.96,3.83,0.972,0.939,0.951,0.882,Monitored ground truth station in OpenAQ
+ZONE-LHR-0108,Direct Physical Station,7.28,0.53,10584.0,278,59,110,109,16.33,22.93,0.892,3.39,0.97,0.891,0.87,0.734,Monitored ground truth station in OpenAQ
+ZONE-LHR-0109,Unmonitored / Spatial Kriging Target,3.16,0.1,4638.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0110,Unmonitored / Spatial Kriging Target,2.59,0.17,1581.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0111,Direct Physical Station,2.1,0.84,1244.0,419,199,110,110,12.8,18.32,0.95,3.41,0.98,0.962,0.923,0.878,Monitored ground truth station in OpenAQ
+ZONE-LHR-0112,Unmonitored / Spatial Kriging Target,1.69,0.68,1234.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0113,Unmonitored / Spatial Kriging Target,1.5,0.1,781.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0114,Unmonitored / Spatial Kriging Target,1.5,0.01,1178.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0115,Unmonitored / Spatial Kriging Target,1.5,0.46,4000.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0116,Unmonitored / Spatial Kriging Target,1.54,0.57,1581.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0117,Unmonitored / Spatial Kriging Target,1.81,0.54,1410.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0118,Unmonitored / Spatial Kriging Target,2.25,0.74,2502.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0119,Unmonitored / Spatial Kriging Target,2.68,0.09,18284.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0120,Unmonitored / Spatial Kriging Target,10.14,0.16,12624.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0121,Unmonitored / Spatial Kriging Target,10.57,0.27,13091.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0122,Direct Physical Station,10.93,-0.02,12948.0,379,176,102,101,14.43,21.26,0.949,2.98,0.978,0.971,0.972,0.963,Monitored ground truth station in OpenAQ
+ZONE-LHR-0123,Unmonitored / Spatial Kriging Target,11.12,0.4,10626.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0124,Direct Physical Station,7.62,0.1,8588.0,248,112,101,35,16.37,24.01,0.947,3.08,0.98,0.967,0.983,0.913,Monitored ground truth station in OpenAQ
+ZONE-LHR-0125,Unmonitored / Spatial Kriging Target,7.41,0.03,10682.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0126,Unmonitored / Spatial Kriging Target,7.05,0.79,1280.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0127,Unmonitored / Spatial Kriging Target,6.62,0.16,2040.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0128,Unmonitored / Spatial Kriging Target,2.66,0.21,3621.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0129,Unmonitored / Spatial Kriging Target,2.22,0.01,4539.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0130,Unmonitored / Spatial Kriging Target,1.83,0.43,2428.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0131,Unmonitored / Spatial Kriging Target,1.5,0.51,1206.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0132,Unmonitored / Spatial Kriging Target,1.5,0.23,1263.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0133,Unmonitored / Spatial Kriging Target,1.5,0.33,1394.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0134,Unmonitored / Spatial Kriging Target,1.5,0.42,4000.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0135,Unmonitored / Spatial Kriging Target,1.5,0.45,1277.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0136,Unmonitored / Spatial Kriging Target,1.57,0.05,1829.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0137,Unmonitored / Spatial Kriging Target,1.88,0.76,5054.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0138,Unmonitored / Spatial Kriging Target,2.21,0.42,14229.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0139,Unmonitored / Spatial Kriging Target,6.04,0.26,10547.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0140,Direct Physical Station,2.85,0.22,5953.0,227,57,104,66,16.67,21.86,0.924,7.05,0.989,0.887,0.95,0.891,Monitored ground truth station in OpenAQ
+ZONE-LHR-0141,Direct Physical Station,6.58,0.28,4690.0,108,17,76,15,19.74,31.31,0.516,5.54,0.844,0.818,0.333,0.25,Monitored ground truth station in OpenAQ
+ZONE-LHR-0142,Unmonitored / Spatial Kriging Target,3.21,0.1,9297.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0143,Unmonitored / Spatial Kriging Target,3.21,0.41,2012.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0144,Direct Physical Station,3.07,0.22,10286.0,215,8,110,97,19.07,25.95,0.895,8.35,1.0,0.937,0.857,0.783,Monitored ground truth station in OpenAQ
+ZONE-LHR-0145,Unmonitored / Spatial Kriging Target,2.83,0.53,4585.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0146,Unmonitored / Spatial Kriging Target,2.53,0.23,1398.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0147,Direct Physical Station,2.19,0.47,1363.0,190,24,67,99,13.63,17.87,0.783,7.47,0.974,0.95,0.75,0.667,Monitored ground truth station in OpenAQ
+ZONE-LHR-0148,Unmonitored / Spatial Kriging Target,1.87,0.56,3791.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0149,Unmonitored / Spatial Kriging Target,1.56,0.39,807.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0150,Unmonitored / Spatial Kriging Target,1.5,0.77,752.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0151,Unmonitored / Spatial Kriging Target,1.5,0.53,1064.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0152,Unmonitored / Spatial Kriging Target,1.5,0.64,644.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0153,Unmonitored / Spatial Kriging Target,1.5,0.21,1567.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0154,Unmonitored / Spatial Kriging Target,1.5,0.51,1147.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0155,Unmonitored / Spatial Kriging Target,1.5,0.41,1028.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0156,Unmonitored / Spatial Kriging Target,1.56,0.13,11381.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0157,Direct Physical Station,1.8,0.15,14199.0,134,0,75,59,16.21,20.83,0.798,6.93,0.963,0.897,1.0,0.545,Monitored ground truth station in OpenAQ
+ZONE-LHR-0158,Unmonitored / Spatial Kriging Target,2.04,0.36,3226.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0159,Direct Physical Station,5.76,0.09,6938.0,278,59,110,109,16.26,21.59,0.908,9.4,0.98,0.917,0.913,0.818,Monitored ground truth station in OpenAQ
+ZONE-LHR-0160,Unmonitored / Spatial Kriging Target,5.92,0.13,2263.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0161,Unmonitored / Spatial Kriging Target,2.5,0.35,2255.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0162,Direct Physical Station,2.5,0.81,2069.0,176,129,21,26,12.07,17.09,0.969,1.46,1.0,0.986,0.952,0.908,Monitored ground truth station in OpenAQ
+ZONE-LHR-0163,Direct Physical Station,2.41,0.1,10231.0,387,182,97,108,15.53,28.0,0.936,-1.84,0.925,0.957,0.966,0.966,Monitored ground truth station in OpenAQ
+ZONE-LHR-0164,Unmonitored / Spatial Kriging Target,2.25,0.07,1010.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0165,Unmonitored / Spatial Kriging Target,2.03,0.1,769.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0166,Unmonitored / Spatial Kriging Target,1.8,0.36,2285.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0167,Unmonitored / Spatial Kriging Target,1.55,0.27,1015.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0168,Unmonitored / Spatial Kriging Target,1.5,0.79,868.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0169,Unmonitored / Spatial Kriging Target,1.5,0.17,697.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0170,Unmonitored / Spatial Kriging Target,1.5,0.6,1181.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0171,Unmonitored / Spatial Kriging Target,1.5,0.12,1023.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0172,Unmonitored / Spatial Kriging Target,1.5,0.13,1115.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0173,Unmonitored / Spatial Kriging Target,1.5,0.08,1757.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0174,Unmonitored / Spatial Kriging Target,1.5,0.09,7351.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0175,Unmonitored / Spatial Kriging Target,1.5,0.15,2636.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0176,Unmonitored / Spatial Kriging Target,1.5,0.05,3597.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0177,Unmonitored / Spatial Kriging Target,1.63,0.2,2798.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0178,Unmonitored / Spatial Kriging Target,5.28,0.4,8145.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0179,Unmonitored / Spatial Kriging Target,1.89,0.08,1248.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0180,Unmonitored / Spatial Kriging Target,1.95,0.23,1869.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0181,Unmonitored / Spatial Kriging Target,1.95,0.17,898.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0182,Unmonitored / Spatial Kriging Target,1.89,0.05,5977.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0183,Unmonitored / Spatial Kriging Target,1.77,0.2,1506.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0184,Unmonitored / Spatial Kriging Target,1.62,0.59,1047.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0185,Unmonitored / Spatial Kriging Target,1.55,0.07,933.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0186,Unmonitored / Spatial Kriging Target,1.5,0.22,1814.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0187,Unmonitored / Spatial Kriging Target,1.5,0.04,1820.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0188,Unmonitored / Spatial Kriging Target,1.5,0.17,743.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0189,Unmonitored / Spatial Kriging Target,1.5,0.34,754.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0190,Unmonitored / Spatial Kriging Target,1.5,0.08,1460.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0191,Unmonitored / Spatial Kriging Target,1.5,0.34,5847.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0192,Unmonitored / Spatial Kriging Target,1.5,0.12,1581.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0193,Unmonitored / Spatial Kriging Target,1.5,0.02,5891.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0194,Unmonitored / Spatial Kriging Target,1.5,0.08,2890.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0195,Unmonitored / Spatial Kriging Target,1.5,0.04,4427.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0196,Unmonitored / Spatial Kriging Target,1.5,0.22,1874.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0197,Unmonitored / Spatial Kriging Target,1.5,0.04,1413.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0198,Unmonitored / Spatial Kriging Target,1.52,0.37,968.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0199,Unmonitored / Spatial Kriging Target,1.52,0.12,702.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0200,Unmonitored / Spatial Kriging Target,1.5,0.63,4409.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0201,Unmonitored / Spatial Kriging Target,1.5,0.09,4876.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0202,Unmonitored / Spatial Kriging Target,1.5,0.1,1228.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0203,Unmonitored / Spatial Kriging Target,1.5,0.44,507.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0204,Unmonitored / Spatial Kriging Target,1.5,0.57,596.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0205,Unmonitored / Spatial Kriging Target,1.5,0.13,3575.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0206,Unmonitored / Spatial Kriging Target,1.5,0.26,1724.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0207,Unmonitored / Spatial Kriging Target,1.5,0.14,2104.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0208,Unmonitored / Spatial Kriging Target,1.5,0.13,2658.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0209,Unmonitored / Spatial Kriging Target,1.5,0.49,6237.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0210,Direct Physical Station,1.5,0.16,4648.0,203,125,0,78,11.76,15.19,0.963,0.5,0.9,1.0,1.0,1.0,Monitored ground truth station in OpenAQ
+ZONE-LHR-0211,Unmonitored / Spatial Kriging Target,1.5,0.39,2630.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0212,Unmonitored / Spatial Kriging Target,1.5,0.07,750.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0213,Unmonitored / Spatial Kriging Target,1.5,0.13,993.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0214,Unmonitored / Spatial Kriging Target,1.5,0.31,1925.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0215,Unmonitored / Spatial Kriging Target,1.5,0.21,951.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0216,Unmonitored / Spatial Kriging Target,1.5,0.21,5002.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0217,Unmonitored / Spatial Kriging Target,1.5,0.15,603.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0218,Unmonitored / Spatial Kriging Target,1.5,0.09,2070.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0219,Unmonitored / Spatial Kriging Target,1.5,0.11,3556.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0220,Unmonitored / Spatial Kriging Target,1.5,0.11,4128.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0221,Unmonitored / Spatial Kriging Target,1.5,0.08,2428.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0222,Unmonitored / Spatial Kriging Target,1.5,-0.03,9896.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0223,Unmonitored / Spatial Kriging Target,1.5,0.18,5629.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0224,Unmonitored / Spatial Kriging Target,1.5,0.24,2761.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0225,Unmonitored / Spatial Kriging Target,1.5,0.2,832.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0226,Unmonitored / Spatial Kriging Target,1.5,0.57,603.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0227,Unmonitored / Spatial Kriging Target,1.5,0.62,520.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0228,Unmonitored / Spatial Kriging Target,1.5,0.09,808.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0229,Unmonitored / Spatial Kriging Target,1.5,0.14,965.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0230,Unmonitored / Spatial Kriging Target,1.5,0.55,964.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0231,Unmonitored / Spatial Kriging Target,1.5,0.17,586.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0232,Unmonitored / Spatial Kriging Target,1.5,0.15,667.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0233,Unmonitored / Spatial Kriging Target,1.5,0.23,1385.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0234,Unmonitored / Spatial Kriging Target,1.5,-0.02,4978.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0235,Unmonitored / Spatial Kriging Target,1.5,0.06,6910.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0236,Unmonitored / Spatial Kriging Target,1.5,0.03,1394.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0237,Unmonitored / Spatial Kriging Target,1.5,0.09,2756.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0238,Unmonitored / Spatial Kriging Target,1.5,0.3,4257.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0239,Unmonitored / Spatial Kriging Target,1.5,0.09,2527.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0240,Unmonitored / Spatial Kriging Target,1.5,0.16,1542.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3
+ZONE-LHR-0241,Unmonitored / Spatial Kriging Target,1.5,0.16,981.0,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No physical ground station; live forecast served via Universal Kriging (M2) -> M3

@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AeroCast — Lahore Urban Environmental Risk Intelligence Platform</title>
+  <meta name="description" content="Predictive hyper-local environmental risk intelligence for Lahore District across 241 canonical zones. 24h AQI forecasting, Urban Heat Islands, and Flash Flood modeling.">
+  
+  <!-- Google Fonts: Plus Jakarta Sans (UI) & JetBrains Mono (Data Metrics) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+  
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="/dashboard/css/styles.css">
+</head>
+<body class="theme-dark">
+
+  <!-- TOP APP HEADER -->
+  <header class="app-header" id="app-header">
+    <div class="header-left">
+      <div class="brand-container">
+        <div class="brand-logo">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/>
+            <path d="M12 13v6"/>
+            <path d="m9 16 3 3 3-3"/>
+          </svg>
+        </div>
+        <div class="brand-titles">
+          <h1 class="brand-name">AeroCast</h1>
+          <span class="brand-tagline">Lahore Urban Risk Intelligence Platform</span>
+        </div>
+      </div>
+      <div class="system-status-badge" id="system-status-badge">
+        <span class="status-dot pulse-green"></span>
+        <span class="status-text">241 ZONES ACTIVE</span>
+      </div>
+    </div>
+
+    <div class="header-center">
+      <div class="search-box-container">
+        <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>
+        </svg>
+        <input type="text" id="zone-search-input" placeholder="Search Zone ID (e.g. ZONE-LHR-0075) or locality..." autocomplete="off">
+        <button class="btn-clear-search" id="btn-clear-search" title="Clear Search" style="display: none;">&times;</button>
+        <div class="search-suggestions" id="search-suggestions" style="display: none;"></div>
+      </div>
+    </div>
+
+    <div class="header-right">
+      <div class="time-widget">
+        <span class="time-label">PKT (UTC+5)</span>
+        <span class="time-value" id="current-pkt-time">--:--:--</span>
+      </div>
+      <button class="btn btn-ai-copilot" id="btn-open-copilot" title="Ask AeroCast AI Urban Risk Copilot">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2v4"/><path d="m4.93 4.93 2.83 2.83"/><path d="M2 12h4"/><path d="m4.93 19.07 2.83-2.83"/><path d="M12 22v-4"/><path d="m19.07 19.07-2.83-2.83"/><path d="M22 12h-4"/><path d="m19.07 4.93-2.83 2.83"/><circle cx="12" cy="12" r="4"/>
+        </svg>
+        <span>AI Copilot</span>
+        <span class="ai-chip-tag">Gemini 2.5</span>
+      </button>
+      <button class="btn btn-sitrep" id="btn-open-sitrep" title="Generate Executive District Situation Report">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/>
+        </svg>
+        <span>Situation Report</span>
+      </button>
+      <button class="btn btn-alert-toggle" id="btn-toggle-alerts" title="View Early Warning Alerts">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/>
+          <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/>
+        </svg>
+        <span>Alerts</span>
+        <span class="alert-count-badge" id="header-alert-count">0</span>
+      </button>
+      <button class="btn btn-primary" id="btn-refresh-data" title="Refresh Live Model Intelligence">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/>
+          <path d="M3 3v5h5"/>
+          <path d="M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16"/>
+          <path d="M16 16h5v5"/>
+        </svg>
+        <span>Refresh</span>
+      </button>
+      <a href="/docs" target="_blank" class="btn btn-secondary" title="Open API Documentation">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/>
+          <path d="M6 6h10"/>
+          <path d="M6 10h10"/>
+        </svg>
+        <span>API Docs</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- EMERGENCY BROADCAST ALERT BANNER -->
+  <div class="emergency-broadcast-bar" id="emergency-broadcast-bar">
+    <div class="broadcast-content">
+      <span class="broadcast-tag pulse-red">🚨 EARLY WARNING ALERT</span>
+      <span class="broadcast-text" id="emergency-broadcast-text">Evaluating 241 Lahore computational zones for active environmental hazards...</span>
+    </div>
+    <div class="broadcast-actions">
+      <button class="btn-broadcast-action" id="btn-broadcast-open">View All Alerts</button>
+    </div>
+  </div>
+
+  <!-- TOP KPI METRIC CARDS -->
+  <section class="kpi-section" id="kpi-section">
+    <div class="kpi-grid">
+      
+      <!-- KPI 1: District Mean PM2.5 -->
+      <div class="kpi-card" id="kpi-pm25-card">
+        <div class="kpi-header">
+          <span class="kpi-title">District Mean PM2.5</span>
+          <span class="kpi-tag" id="kpi-pm25-tag">Moderate</span>
+        </div>
+        <div class="kpi-body">
+          <div class="kpi-value-container">
+            <span class="kpi-value" id="kpi-mean-pm25">--</span>
+            <span class="kpi-unit">µg/m³</span>
+          </div>
+          <p class="kpi-desc" id="kpi-pm25-desc">Live continuous Kriging surface across 241 zones</p>
+        </div>
+      </div>
+
+      <!-- KPI 2: 24h Peak Smog Alert -->
+      <div class="kpi-card" id="kpi-forecast-card">
+        <div class="kpi-header">
+          <span class="kpi-title">24h Peak Forecast</span>
+          <span class="kpi-tag tag-orange" id="kpi-peak-forecast-tag">Alert</span>
+        </div>
+        <div class="kpi-body">
+          <div class="kpi-value-container">
+            <span class="kpi-value" id="kpi-peak-forecast-val">--</span>
+            <span class="kpi-unit">µg/m³</span>
+          </div>
+          <p class="kpi-desc" id="kpi-peak-forecast-zone">Model v3.0 Extreme-Event Regressor</p>
+        </div>
+      </div>
+
+      <!-- KPI 3: Urban Heat Island Maximum -->
+      <div class="kpi-card" id="kpi-uhi-card">
+        <div class="kpi-header">
+          <span class="kpi-title">Peak Heat Island Index</span>
+          <span class="kpi-tag tag-red" id="kpi-uhi-tag">Elevated</span>
+        </div>
+        <div class="kpi-body">
+          <div class="kpi-value-container">
+            <span class="kpi-value" id="kpi-peak-uhi-val">--</span>
+            <span class="kpi-unit">/ 1.00</span>
+          </div>
+          <p class="kpi-desc" id="kpi-peak-uhi-zone">Copernicus NDVI & Impervious Core</p>
+        </div>
+      </div>
+
+      <!-- KPI 4: Flash Flood Maximum Risk -->
+      <div class="kpi-card" id="kpi-flood-card">
+        <div class="kpi-header">
+          <span class="kpi-title">Flash Flood Vulnerability</span>
+          <span class="kpi-tag tag-blue" id="kpi-flood-tag">Watch</span>
+        </div>
+        <div class="kpi-body">
+          <div class="kpi-value-container">
+            <span class="kpi-value" id="kpi-peak-flood-val">--</span>
+            <span class="kpi-unit">/ 1.00</span>
+          </div>
+          <p class="kpi-desc" id="kpi-peak-flood-zone">Precipitation & Slope Inversion</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- MAIN WORKSPACE: MAP & DRILL-DOWN PANEL -->
+  <main class="main-layout" id="main-layout">
+    
+    <!-- LEFT: GIS MAP CONTAINER -->
+    <div class="map-viewport" id="map-viewport">
+      
+      <!-- LAYER SWITCHER DOCK -->
+      <div class="layer-control-dock" id="layer-control-dock">
+        <span class="dock-label">Hazard Layer:</span>
+        <div class="layer-button-group" role="tablist">
+          <button class="layer-btn active" data-layer="forecast" id="btn-layer-forecast">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>
+            <span>24h AQI Forecast</span>
+          </button>
+          <button class="layer-btn" data-layer="pm25_live" id="btn-layer-pm25">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.9 19.1C1 15.2 1 8.8 4.9 4.9"/><path d="M7.8 16.2c-2.3-2.3-2.3-6.1 0-8.5"/><circle cx="12" cy="12" r="2"/><path d="M16.2 7.8c2.3 2.3 2.3 6.1 0 8.5"/><path d="M19.1 4.9C23 8.8 23 15.1 19.1 19"/></svg>
+            <span>Current PM2.5</span>
+          </button>
+          <button class="layer-btn" data-layer="heat_island" id="btn-layer-uhi">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+            <span>Heat Island (UHI)</span>
+          </button>
+          <button class="layer-btn" data-layer="flash_flood" id="btn-layer-flood">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20"/><path d="m17 5-5-3-5 3"/><path d="m17 19-5 3-5-3"/><path d="M2 12h20"/></svg>
+            <span>Flash Flood</span>
+          </button>
+          <button class="layer-btn" data-layer="composite" id="btn-layer-composite">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <span>Multi-Hazard Risk</span>
+          </button>
+          <button class="layer-btn layer-btn-fire" data-layer="firms_fires" id="btn-layer-fires">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>
+            <span>NASA Fires</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- LEAFLET MAP ELEMENT -->
+      <div id="gis-map" class="gis-map"></div>
+
+      <!-- MAP LEGEND PANEL -->
+      <div class="map-legend-panel" id="map-legend-panel">
+        <div class="legend-header">
+          <span class="legend-title" id="legend-title">24h PM2.5 Forecast (µg/m³)</span>
+        </div>
+        <div class="legend-scale" id="legend-scale">
+          <!-- Populated by JavaScript -->
+        </div>
+        <div class="legend-confidence-note">
+          <span class="legend-chip chip-direct"></span> Direct Station (&ge;0.90)
+          <span class="legend-chip chip-kriging" style="margin-left: 10px;"></span> Spatial Kriging
+        </div>
+      </div>
+
+      <!-- QUICK MAP ACTIONS (Reset view, Zoom) -->
+      <div class="map-floating-controls">
+        <button class="map-action-btn" id="btn-reset-view" title="Reset Map View to Lahore Center">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- RIGHT: ZONE DRILL-DOWN & ALERTS PANEL -->
+    <aside class="zone-detail-panel" id="zone-detail-panel">
+      
+      <!-- PANEL TAB SWITCHER -->
+      <div class="panel-tab-bar">
+        <button class="panel-tab-btn active" id="tab-btn-zone" data-tab="zone">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/></svg>
+          <span>Zone Intelligence</span>
+        </button>
+        <button class="panel-tab-btn" id="tab-btn-alerts" data-tab="alerts">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg>
+          <span>Early Warnings</span>
+          <span class="tab-alert-pill" id="tab-alert-count">0</span>
+        </button>
+      </div>
+
+      <!-- VIEW 1: ZONE DRILL-DOWN TAB -->
+      <div class="panel-tab-view" id="view-zone-detail">
+        <div class="panel-header">
+          <div class="panel-title-container">
+            <h2 class="panel-title" id="panel-zone-name">Select a Zone</h2>
+            <span class="panel-zone-id" id="panel-zone-id">Click any grid polygon on map</span>
+          </div>
+          <button class="btn-close-panel" id="btn-close-panel" title="Close Panel" style="display: none;">&times;</button>
+        </div>
+
+        <!-- EMPTY STATE PROMPT -->
+        <div class="panel-empty-state" id="panel-empty-state">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/>
+            <line x1="8" y1="2" x2="8" y2="18"/>
+            <line x1="16" y1="6" x2="16" y2="22"/>
+          </svg>
+          <h3>No Zone Selected</h3>
+          <p>Click any of the 241 Lahore computational zones or use the search bar above to inspect hyper-local risk intelligence.</p>
+        </div>
+
+        <!-- POPULATED ZONE DETAIL CONTENT -->
+        <div class="panel-content" id="panel-content" style="display: none;">
+          
+          <!-- SECTION 1: Current vs 24h Forecast Air Quality -->
+          <div class="detail-card">
+            <div class="detail-card-header">
+              <span class="card-section-title">24-Hour AQI & PM2.5 Forecast</span>
+              <span class="badge" id="badge-hazard-tier">Unhealthy</span>
+            </div>
+            <div class="detail-card-body">
+              <div class="metric-row">
+                <div class="metric-block">
+                  <span class="metric-label">Current PM2.5</span>
+                  <span class="metric-val" id="val-current-pm25">--</span>
+                  <span class="metric-sub" id="val-kriging-conf">Conf: --%</span>
+                </div>
+                <div class="metric-divider"></div>
+                <div class="metric-block">
+                  <span class="metric-label">24h Forecast</span>
+                  <span class="metric-val val-highlight" id="val-forecast-pm25">--</span>
+                  <span class="metric-sub" id="val-forecast-ci">80% CI: [--, --]</span>
+                </div>
+              </div>
+
+              <!-- Chart Container -->
+              <div class="chart-container">
+                <canvas id="zone-forecast-chart"></canvas>
+              </div>
+            </div>
+          </div>
+
+          <!-- SECTION 2: Urban Heat Island & Surface Context -->
+          <div class="detail-card">
+            <div class="detail-card-header">
+              <span class="card-section-title">Urban Heat Island (UHI) Vulnerability</span>
+              <span class="badge badge-yellow" id="badge-uhi-tier">Moderate</span>
+            </div>
+            <div class="detail-card-body">
+              <div class="metric-grid-2x2">
+                <div class="metric-cell">
+                  <span class="cell-label">UHI Anomaly Score</span>
+                  <span class="cell-val" id="val-uhi-score">--</span>
+                </div>
+                <div class="metric-cell">
+                  <span class="cell-label">NDVI Vegetation</span>
+                  <span class="cell-val" id="val-ndvi-index">--</span>
+                </div>
+                <div class="metric-cell">
+                  <span class="cell-label">Impervious Surface</span>
+                  <span class="cell-val" id="val-impervious-ratio">--</span>
+                </div>
+                <div class="metric-cell">
+                  <span class="cell-label">Pop. Density</span>
+                  <span class="cell-val" id="val-pop-density">-- /km²</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SECTION 3: Flash Flood & Hydrological Risk -->
+          <div class="detail-card">
+            <div class="detail-card-header">
+              <span class="card-section-title">Flash Flood & Waterlogging Risk</span>
+              <span class="badge badge-blue" id="badge-flood-tier">Low</span>
+            </div>
+            <div class="detail-card-body">
+              <div class="metric-row">
+                <div class="metric-block">
+                  <span class="metric-label">Runoff Risk Score</span>
+                  <span class="metric-val" id="val-flood-score">--</span>
+                </div>
+                <div class="metric-divider"></div>
+                <div class="metric-block">
+                  <span class="metric-label">Inundation Estimate</span>
+                  <span class="metric-val-sm" id="val-flood-inundation">--</span>
+                </div>
+              </div>
+              <div class="advisory-box" id="flood-advisory-box">
+                <strong>Advisory:</strong> <span id="val-flood-advisory">--</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- SECTION 4: AI Multi-Agency Action Directives (Gemini 2.5 Flash) -->
+          <div class="detail-card ai-mitigation-card">
+            <div class="detail-card-header">
+              <div class="ai-card-title-group">
+                <span class="card-section-title">⚡ AI Mitigation Directives</span>
+                <span class="badge badge-purple">Gemini 2.5 Flash</span>
+              </div>
+              <div class="ai-lang-mini-toggles" id="zone-ai-lang-toggles">
+                <button class="ai-lang-btn active" data-lang="en">EN</button>
+                <button class="ai-lang-btn" data-lang="ur">اردو</button>
+                <button class="ai-lang-btn" data-lang="roman_ur">Roman</button>
+              </div>
+            </div>
+            <div class="detail-card-body">
+              <button class="btn btn-sm btn-generate-ai-plan" id="btn-generate-ai-plan">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 2v4"/><path d="m4.93 4.93 2.83 2.83"/><path d="M2 12h4"/><path d="m4.93 19.07 2.83-2.83"/><path d="M12 22v-4"/><path d="m19.07 19.07-2.83-2.83"/><path d="M22 12h-4"/><path d="m19.07 4.93-2.83 2.83"/><circle cx="12" cy="12" r="4"/>
+                </svg>
+                <span>Generate Hyper-Local AI Action Plan</span>
+              </button>
+              <div class="ai-plan-content" id="ai-plan-content" style="display: none;">
+                <div class="ai-plan-loading" id="ai-plan-loading" style="display: none;">
+                  <span class="spinner-dot"></span> Generating tactical multi-agency directives via Gemini 2.5 Flash...
+                </div>
+                <div class="ai-plan-text markdown-body" id="ai-plan-text"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SECTION 5: Static Terrain & Grid Position -->
+          <div class="detail-card">
+            <div class="detail-card-header">
+              <span class="card-section-title">Geospatial Terrain Coordinates</span>
+            </div>
+            <div class="detail-card-body">
+              <div class="metric-grid-2x2">
+                <div class="metric-cell">
+                  <span class="cell-label">Elevation (DEM)</span>
+                  <span class="cell-val" id="val-elevation">-- m</span>
+                </div>
+                <div class="metric-cell">
+                  <span class="cell-label">Terrain Slope</span>
+                  <span class="cell-val" id="val-slope">--%</span>
+                </div>
+                <div class="metric-cell">
+                  <span class="cell-label">Road Density</span>
+                  <span class="cell-val" id="val-road-density">-- km/km²</span>
+                </div>
+                <div class="metric-cell">
+                  <span class="cell-label">Grid Coordinates</span>
+                  <span class="cell-val" id="val-grid-rowcol">R-- C--</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- BOTTOM HIGH-PRIORITY ACTION FEED -->
+        <div class="priority-feed-container">
+          <div class="priority-feed-header">
+            <span class="feed-title">Top Priority Action Zones</span>
+            <span class="feed-subtitle">Unified Composite Hazard Index</span>
+          </div>
+          <div class="priority-feed-list" id="priority-feed-list">
+            <div class="feed-loading">Loading priority alerts...</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- VIEW 2: EARLY WARNING ALERTS TAB -->
+      <div class="panel-tab-view" id="view-alerts-center" style="display: none;">
+        <div class="alerts-tab-header">
+          <div class="alerts-title-row">
+            <div>
+              <h2 class="panel-title">Early Warning Center</h2>
+              <span class="panel-zone-id">Module M7 Automated Multi-Hazard Dispatcher</span>
+            </div>
+            <button class="btn btn-sm btn-alert-scan" id="btn-trigger-dispatch" title="Trigger real-time hazard threshold evaluation & dispatch">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+              <span>Scan & Dispatch</span>
+            </button>
+          </div>
+
+          <!-- Language Selector Chips -->
+          <div class="lang-selector-bar">
+            <span class="lang-label">Language:</span>
+            <div class="lang-chips">
+              <button class="lang-chip active" data-lang="en">English</button>
+              <button class="lang-chip" data-lang="ur">اردو (Urdu)</button>
+              <button class="lang-chip" data-lang="roman_ur">Roman Urdu</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Active Alerts List -->
+        <div class="alerts-list-container" id="alerts-list-container">
+          <div class="feed-loading">Scanning active multi-hazard alerts across 241 zones...</div>
+        </div>
+
+        <!-- Registered Agencies Status Footer -->
+        <div class="subscribers-footer">
+          <span class="sub-footer-title">Registered Stakeholder Channels</span>
+          <div class="sub-chips-row">
+            <span class="sub-chip">🟢 PDMA (Webhook)</span>
+            <span class="sub-chip">🟢 WASA 1334 (Webhook)</span>
+            <span class="sub-chip">🟢 Rescue 1122 (SMS)</span>
+            <span class="sub-chip">🟢 EPA Punjab (Telemetry)</span>
+          </div>
+        </div>
+      </div>
+
+    </aside>
+
+  </main>
+
+  <!-- ======================================================= -->
+  <!-- MODAL 1: AI COPILOT INTERACTIVE ASSISTANT (GEMINI 2.5) -->
+  <!-- ======================================================= -->
+  <div class="modal-backdrop" id="modal-copilot-backdrop" style="display: none;">
+    <div class="modal-window modal-copilot-window" id="modal-copilot">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <div class="modal-icon-badge badge-purple">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2v4"/><path d="m4.93 4.93 2.83 2.83"/><path d="M2 12h4"/><path d="m4.93 19.07 2.83-2.83"/><path d="M12 22v-4"/><path d="m19.07 19.07-2.83-2.83"/><path d="M22 12h-4"/><path d="m19.07 4.93-2.83 2.83"/><circle cx="12" cy="12" r="4"/>
+            </svg>
+          </div>
+          <div>
+            <h3 class="modal-title">AeroCast AI Urban Risk Copilot</h3>
+            <span class="modal-subtitle">Direct Inference via Google Gemini 2.5 Flash</span>
+          </div>
+        </div>
+        <button class="modal-close-btn" id="btn-close-copilot">&times;</button>
+      </div>
+
+      <!-- Quick Prompt Suggestions -->
+      <div class="copilot-quick-prompts">
+        <span class="quick-prompt-label">Quick Inquiries:</span>
+        <div class="quick-chips-scroll">
+          <button class="quick-chip" data-prompt="Which 5 zones have the most severe smog and flood risk today?">🚨 Top 5 Critical Zones</button>
+          <button class="quick-chip" data-prompt="What immediate traffic curbs and water misting should be deployed for Mall Road / Zone 75?">🚗 Mall Road Anti-Smog Plan</button>
+          <button class="quick-chip" data-prompt="If 40mm rainfall occurs tonight, which low-lying zones require WASA dewatering pumps first?">🌧️ WASA Dewatering Priority</button>
+          <button class="quick-chip" data-prompt="How much are transboundary crop stubble fires contributing to current PM2.5 in Lahore?">🔥 Crop Stubble Smoke Impact</button>
+        </div>
+      </div>
+
+      <!-- Chat History -->
+      <div class="copilot-chat-container" id="copilot-chat-container">
+        <div class="chat-message chat-msg-ai">
+          <div class="chat-avatar">AI</div>
+          <div class="chat-bubble">
+            <p><strong>Salam / Greetings!</strong> I am your AeroCast AI Urban Risk Copilot, connected live to 241 Lahore computational zones, telemetry, and 24-hour predictive models.</p>
+            <p>Ask me about specific zones, emergency deployment strategies, or environmental hazard explanations.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Chat Input Dock -->
+      <div class="copilot-input-dock">
+        <div class="copilot-lang-picker">
+          <select id="copilot-lang-select">
+            <option value="en">English</option>
+            <option value="ur">اردو (Urdu)</option>
+            <option value="roman_ur">Roman Urdu</option>
+          </select>
+        </div>
+        <input type="text" id="copilot-user-input" placeholder="Ask anything about Lahore smog, heat islands, or flash flood risk..." autocomplete="off">
+        <button class="btn btn-send-copilot" id="btn-send-copilot">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/>
+          </svg>
+          <span>Send</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- ======================================================= -->
+  <!-- MODAL 3: EXECUTIVE SITUATION REPORT (DSR) -->
+  <!-- ======================================================= -->
+  <div class="modal-backdrop" id="modal-sitrep-backdrop" style="display: none;">
+    <div class="modal-window modal-sitrep-window" id="modal-sitrep">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <div class="modal-icon-badge badge-green">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/>
+            </svg>
+          </div>
+          <div>
+            <h3 class="modal-title">District Daily Situation Report (DSR)</h3>
+            <span class="modal-subtitle">Official Executive Briefing for Commissioner Lahore & PDMA</span>
+          </div>
+        </div>
+        <div class="modal-actions">
+          <button class="btn btn-sm btn-secondary" id="btn-copy-sitrep">Copy Text</button>
+          <button class="btn btn-sm btn-primary" id="btn-print-sitrep">Print / PDF</button>
+          <button class="modal-close-btn" id="btn-close-sitrep">&times;</button>
+        </div>
+      </div>
+
+      <div class="modal-body sitrep-body-container" id="sitrep-body-container">
+        <div class="sitrep-loading" id="sitrep-loading">
+          <span class="spinner-dot"></span> Generating official Executive Situation Report via Gemini 2.5 Flash...
+        </div>
+        <div class="sitrep-content markdown-body" id="sitrep-content" style="display: none;"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js"></script>
+
+  <!-- Core Dashboard Application Script -->
+  <script src="/dashboard/js/app.js"></script>
+</body>
+</html>
+

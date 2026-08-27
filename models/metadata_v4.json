@@ -1,0 +1,199 @@
+{
+  "model_version": "v4.0",
+  "architecture": "Decoupled_Two-Stage_Hurdle_Quantile_v4",
+  "features": [
+    "pm25_current",
+    "pm25_lag_24h",
+    "pm25_lag_48h",
+    "pm25_lag_7d",
+    "pm25_diff_24h",
+    "pm25_trajectory_ratio",
+    "pm25_acceleration",
+    "pm25_rolling_mean_24h",
+    "pm25_rolling_mean_72h",
+    "pm25_rolling_max_24h",
+    "pm25_rolling_max_72h",
+    "pm25_rolling_std_72h",
+    "consecutive_elevated_days",
+    "temp_max",
+    "temp_min",
+    "temp_diurnal_range",
+    "precipitation_sum",
+    "wind_speed_max",
+    "relative_humidity",
+    "stagnation_index",
+    "ventilation_factor",
+    "stagnation_smog_interaction",
+    "atmospheric_ventilation_index",
+    "thermal_inversion_trapping_index",
+    "nasa_firms_fire_count",
+    "nasa_firms_total_frp_mw",
+    "month",
+    "day_of_year",
+    "sin_day_of_year",
+    "cos_day_of_year",
+    "max_adjacent_sensor_pm25",
+    "mean_adjacent_sensor_pm25",
+    "spatial_pollution_gradient",
+    "wind_downwind_pm25_transport",
+    "kriging_variance_uncertainty",
+    "nearest_sensor_distance_km"
+  ],
+  "timestamp_utc": "2026-08-24T16:42:57.229653+00:00",
+  "metrics": {
+    "model_version": "v4.0",
+    "architecture": "Decoupled_Two-Stage_Hurdle_Quantile_v4",
+    "features_count": 36,
+    "training_samples": 6547,
+    "training_period": "2024-08-31 to 2025-10-31",
+    "smog_season_holdout": {
+      "period": "2025-11-01 to 2026-02-28",
+      "samples": 5312,
+      "elevated_samples_over_100": 4651,
+      "severe_samples_over_150": 3130,
+      "mae": 36.11,
+      "rmse": 47.09,
+      "r2": 0.6188,
+      "classifier_roc_auc": 0.845,
+      "extreme_smog_recall_100": 0.989,
+      "extreme_smog_precision_100": 0.889,
+      "severe_smog_recall_150": 0.906,
+      "severe_smog_precision_150": 0.794,
+      "pollution_tier_breakdown": {
+        "low_under_50": {
+          "samples": 31,
+          "mae": 70.97,
+          "rmse": 75.68,
+          "r2": -126.034
+        },
+        "moderate_50_to_100": {
+          "samples": 630,
+          "mae": 43.31,
+          "rmse": 50.57,
+          "r2": -13.591
+        },
+        "high_100_to_150": {
+          "samples": 1521,
+          "mae": 26.65,
+          "rmse": 35.29,
+          "r2": -5.357
+        },
+        "severe_over_150": {
+          "samples": 3130,
+          "mae": 38.91,
+          "rmse": 50.86,
+          "r2": 0.276
+        }
+      }
+    },
+    "summer_season_holdout": {
+      "period": "2026-03-01 to 2026-08-22",
+      "samples": 9026,
+      "mae": 18.4,
+      "rmse": 23.36,
+      "r2": 0.2639,
+      "classifier_roc_auc": 0.935,
+      "pollution_tier_breakdown": {
+        "low_under_50": {
+          "samples": 5267,
+          "mae": 19.14,
+          "rmse": 24.34,
+          "r2": -6.172
+        },
+        "moderate_50_to_100": {
+          "samples": 3224,
+          "mae": 16.45,
+          "rmse": 20.43,
+          "r2": -1.453
+        },
+        "high_100_to_150": {
+          "samples": 440,
+          "mae": 19.93,
+          "rmse": 25.07,
+          "r2": -2.699
+        },
+        "severe_over_150": {
+          "samples": 95,
+          "mae": 36.19,
+          "rmse": 43.78,
+          "r2": -0.926
+        }
+      }
+    },
+    "combined_annual_holdout": {
+      "total_holdout_samples": 14338,
+      "mae": 24.96,
+      "rmse": 34.13,
+      "r2": 0.8222,
+      "pollution_tier_breakdown": {
+        "low_under_50": {
+          "samples": 5298,
+          "mae": 19.45,
+          "rmse": 24.95,
+          "r2": -6.54
+        },
+        "moderate_50_to_100": {
+          "samples": 3854,
+          "mae": 20.84,
+          "rmse": 27.7,
+          "r2": -2.818
+        },
+        "high_100_to_150": {
+          "samples": 1961,
+          "mae": 25.14,
+          "rmse": 33.27,
+          "r2": -4.574
+        },
+        "severe_over_150": {
+          "samples": 3225,
+          "mae": 38.83,
+          "rmse": 50.66,
+          "r2": 0.283
+        }
+      }
+    }
+  },
+  "feature_importances": {
+    "24h": {
+      "max_adjacent_sensor_pm25": 0.25506460666656494,
+      "cos_day_of_year": 0.2328837364912033,
+      "pm25_current": 0.21926014125347137,
+      "mean_adjacent_sensor_pm25": 0.06537327170372009,
+      "day_of_year": 0.03462299704551697,
+      "nasa_firms_total_frp_mw": 0.013683230616152287,
+      "pm25_rolling_mean_72h": 0.012117304839193821,
+      "sin_day_of_year": 0.011448961682617664,
+      "consecutive_elevated_days": 0.011383939534425735,
+      "precipitation_sum": 0.00996516365557909,
+      "pm25_rolling_mean_24h": 0.00914401188492775,
+      "kriging_variance_uncertainty": 0.00860345084220171,
+      "pm25_rolling_max_24h": 0.008544460870325565,
+      "thermal_inversion_trapping_index": 0.008087677881121635,
+      "spatial_pollution_gradient": 0.008055677637457848,
+      "pm25_rolling_max_72h": 0.007235915865749121,
+      "nasa_firms_fire_count": 0.006903060711920261,
+      "stagnation_index": 0.00685947434976697,
+      "wind_downwind_pm25_transport": 0.005900663323700428,
+      "pm25_trajectory_ratio": 0.005482735577970743,
+      "temp_diurnal_range": 0.005275346804410219,
+      "ventilation_factor": 0.005241327453404665,
+      "wind_speed_max": 0.004491360392421484,
+      "pm25_lag_24h": 0.004182830452919006,
+      "stagnation_smog_interaction": 0.00399133563041687,
+      "relative_humidity": 0.003975335508584976,
+      "temp_max": 0.0036747485864907503,
+      "pm25_lag_48h": 0.00358631182461977,
+      "month": 0.0035457329358905554,
+      "pm25_acceleration": 0.0034049591049551964,
+      "atmospheric_ventilation_index": 0.003369384678080678,
+      "pm25_lag_7d": 0.00315531506203115,
+      "pm25_rolling_std_72h": 0.003117782063782215,
+      "nearest_sensor_distance_km": 0.002988348947837949,
+      "pm25_diff_24h": 0.0028727641329169273,
+      "temp_min": 0.002506737597286701
+    }
+  },
+  "residual_std": {
+    "24h": 33.36341735901217
+  }
+}

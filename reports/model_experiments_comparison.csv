@@ -1,0 +1,8 @@
+model_name,N,MAE,RMSE,R2,Bias,Median_AE,P95_AE,High_Total,High_Recall,High_Precision,High_F1,Severe_Total,Severe_TP,Severe_FN,Severe_Recall,Severe_Precision,Severe_F1,Severe_MAE,Severe_RMSE,Mean_Underprediction,Median_Underprediction,Severe_FN_Rate
+Model A: Baseline (Unweighted XGBoost),3515,19.98,29.56,0.767,3.31,13.71,61.37,1289,0.898,0.849,0.873,504,361,143,0.716,0.659,0.686,35.92,49.02,26.03,14.14,0.284
+Model B: Tuned Hyperparameters,3515,20.42,29.88,0.762,3.71,14.09,62.54,1289,0.887,0.851,0.869,504,372,132,0.738,0.642,0.687,36.23,48.95,25.53,12.25,0.262
+Model C: Target-Aware Sample Weighting (v3.0),3515,20.93,30.22,0.757,6.22,14.87,62.53,1289,0.92,0.826,0.871,504,389,115,0.772,0.612,0.682,34.9,48.3,24.48,11.0,0.228
+Model D: Asymmetric High-Spike Weighting,3515,21.0,30.26,0.756,7.18,14.86,63.02,1289,0.936,0.814,0.871,504,392,112,0.778,0.621,0.691,34.4,47.7,23.35,8.08,0.222
+Model E: Two-Stage Classifier + Regressor,3515,20.95,30.22,0.757,6.35,14.89,62.53,1289,0.922,0.819,0.868,504,389,115,0.772,0.612,0.682,34.78,48.07,24.36,11.0,0.228
+Model F: Pseudo-Huber Robust Regressor,3515,2005.72,2006.66,-1072.527,2005.72,2021.74,2070.83,1289,1.0,0.367,0.537,504,504,0,1.0,0.143,0.251,1893.66,1894.62,0.0,0.0,0.0
+Model G: Calibrated Risk Ensemble (v3.1-Candidate),3515,21.93,31.53,0.735,9.18,15.49,66.21,1289,0.931,0.821,0.873,504,419,85,0.831,0.576,0.681,34.96,47.4,19.59,0.31,0.169

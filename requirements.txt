@@ -1,4 +1,4 @@
-# AeroCast — M1 Data Ingestion Layer Dependencies
+# AeroCast — Dependencies (M1 Ingestion & M2 Spatial Engine)
 # Python 3.10+ / 3.11 / 3.12 compatible
 
 # Async HTTP Client & Retries
@@ -13,9 +13,20 @@ numpy
 pandas
 pyproj
 
+# Spatial Interpolation (M2 Kriging Engine) & ML Models (M3)
+pykrige
+scipy
+xgboost
+scikit-learn
+joblib
+
 # Schema Validation & Settings
 pydantic
 python-dotenv
+
+# Web API & Server (Module M9)
+fastapi
+uvicorn
 
 # Background Job Scheduling
 apscheduler

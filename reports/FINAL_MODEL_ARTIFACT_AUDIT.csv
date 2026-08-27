@@ -1,0 +1,2 @@
+model_path,model_type,model_version,feature_count_model,feature_count_code,feature_order_match,hyperparameters,metadata_match,status
+models\aqi_xgb_24h_v3.0.joblib,<class 'xgboost.sklearn.XGBRegressor'>,v3.0,39,39,True,"{'n_estimators': 300, 'max_depth': 6, 'learning_rate': 0.03, 'subsample': 0.85, 'colsample_bytree': 0.85, 'min_child_weight': 3, 'gamma': 0.1}",True,GREEN (100% Consistent)

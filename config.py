@@ -48,6 +48,25 @@ class Settings:
     )
     OPENMETEO_POLL_INTERVAL_MINUTES: int = int(os.getenv("OPENMETEO_POLL_INTERVAL_MINUTES", "60"))
 
+    # Copernicus Data Space Ecosystem (CDSE) Configuration (for Sentinel-2 NDVI)
+    CDSE_CLIENT_ID: str = os.getenv("CDSE_CLIENT_ID", "")
+    CDSE_CLIENT_SECRET: str = os.getenv("CDSE_CLIENT_SECRET", "")
+    CDSE_AUTH_URL: str = os.getenv(
+        "CDSE_AUTH_URL", "https://identity.dataspace.copernicus.eu/auth/realms/CDSE/protocol/openid-connect/token"
+    )
+    CDSE_ODATA_URL: str = os.getenv("CDSE_ODATA_URL", "https://catalogue.dataspace.copernicus.eu/odata/v1")
+
+    # NASA FIRMS Active Fire Satellite Telemetry (VIIRS 375m / MODIS 1km)
+    NASA_FIRMS_MAP_KEY: str = os.getenv("NASA_FIRMS_MAP_KEY", "a14e94ab0f02e586d9d66be96c70ed39")
+    NASA_FIRMS_BASE_URL: str = os.getenv(
+        "NASA_FIRMS_BASE_URL", "https://firms.modaps.eosdis.nasa.gov/api/area/csv"
+    )
+
+    # AIML API Configuration (Powered by Gemini 2.5 Flash)
+    AIML_API_KEY: str = os.getenv("AIML_API_KEY", "")
+    AIML_API_BASE_URL: str = os.getenv("AIML_API_BASE_URL", "https://api.aimlapi.com/v1")
+    AIML_MODEL: str = os.getenv("AIML_MODEL", "google/gemini-2.5-flash")
+
     # Geospatial and Raster File Paths
     DATA_DIR: Path = BASE_DIR / "data"
     BOUNDARIES_DIR: Path = DATA_DIR / "boundaries"

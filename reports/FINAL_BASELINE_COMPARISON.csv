@@ -1,0 +1,10 @@
+Evaluation_Split,Predictor,MAE,RMSE,R2,MAE_Improvement_vs_Persistence
+Validation Set (Holdout),AeroCast v3.0,20.93,30.22,0.757,+13.1%
+Validation Set (Holdout),Baseline A: Persistence (pm25_current),20.38,29.87,0.762,Baseline (0.0%)
+Validation Set (Holdout),Baseline B: 24h Lag (pm25_lag_24h),27.8,39.55,0.583,-14.1%
+Validation Set (Holdout),Baseline C: Zone Historical Mean,74.17,89.61,-1.141,-101.7%
+Validation Set (Holdout),Baseline D: Global Historical Mean,65.2,76.31,-0.553,-124.9%
+Validation Severe Subset (>=150),AeroCast v3.0,34.9,48.3,0.363,+15.3%
+Validation Severe Subset (>=150),Baseline A: Persistence,34.28,47.27,0.39,Baseline (0.0%)
+Final Future Test Set (Holdout),AeroCast v3.0,12.67,16.65,0.309,+8.2%
+Final Future Test Set (Holdout),Baseline A: Persistence,13.4,18.67,0.132,Baseline (0.0%)

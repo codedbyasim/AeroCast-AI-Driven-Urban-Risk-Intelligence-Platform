@@ -37,8 +37,23 @@ class WorldPopClient:
 
     def is_synthetic_raster(self) -> bool:
         """Return whether the loaded population raster is a synthetic placeholder."""
+        if not HAS_RASTERIO:
+            return True
         self.ensure_raster_exists()
-        return self._is_synthetic or not HAS_RASTERIO
+        if not self.raster_path.exists():
+            return True
+        try:
+            with rasterio.open(self.raster_path) as src:
+                tags = src.tags()
+                if tags.get("provenance") == "synthetic":
+                    return True
+                if tags.get("provenance") == "authentic":
+                    return False
+                if src.width == 250 and src.height == 250:
+                    return True
+                return self._is_synthetic
+        except Exception:
+            return True
 
     def ensure_raster_exists(self) -> Path:
         """

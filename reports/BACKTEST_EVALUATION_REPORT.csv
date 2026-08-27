@@ -1,0 +1,5 @@
+Dataset / Metric,Samples,MAE,RMSE,R2,Recall (>=100),F1 (>=100),Recall (>=150),F1 (>=150)
+Validation Holdout (Jan-May 2026),5626,83.191,100.637,-2.1104,0.0%,0.0,,
+Future Test Holdout (May-Aug 2026),5351,42.696,46.661,-5.0269,0.0%,-5.0269,,
+Hazardous Smog (>=150 ug/m3),765,146.413,--,--,,,0.0%,0.0
+Statistical Drift Status,241,83.191,21.23,CRITICAL_DRIFT,Immediate retraining recommended. Model error exceeds operational tolerance.,--,,

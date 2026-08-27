@@ -136,8 +136,195 @@ def main():
         action="store_true",
         help="Display cache health and summary statistics",
     )
+    parser.add_argument(
+        "--spatial",
+        nargs="?",
+        const="aqi_pm25",
+        metavar="VARIABLE",
+        help="Run spatial Kriging interpolation for a variable across all 241 zones (default: aqi_pm25)",
+    )
+    parser.add_argument(
+        "--spatial-health",
+        action="store_true",
+        help="Display M2 Spatial Interpolation Engine status and diagnostics",
+    )
+    parser.add_argument(
+        "--forecast",
+        type=int,
+        choices=[24],
+        nargs="?",
+        const=24,
+        metavar="HORIZON",
+        help="Generate 24-hour advance AQI hazard forecast for all 241 zones (default: 24)",
+    )
+    parser.add_argument(
+        "--heat-island",
+        action="store_true",
+        help="Compute Urban Heat Island (UHI) risk scores across all 241 zones",
+    )
+    parser.add_argument(
+        "--train-ml",
+        action="store_true",
+        help="Trigger end-to-end ML model training (XGBoost 24h Regressor) and persist artifacts",
+    )
+    parser.add_argument(
+        "--ml-health",
+        action="store_true",
+        help="Display Module M3 ML models and artifact status",
+    )
+    parser.add_argument(
+        "--flood",
+        action="store_true",
+        help="Compute Module M4 Flash Flood & Urban Waterlogging risk scores across all 241 zones",
+    )
+    parser.add_argument(
+        "--flood-health",
+        action="store_true",
+        help="Display Module M4 Flash Flood Risk Engine status and diagnostics",
+    )
+    parser.add_argument(
+        "--dispatch-alerts",
+        action="store_true",
+        help="Evaluate multi-hazard thresholds across all 241 zones and dispatch emergency alerts (Module M7)",
+    )
+    parser.add_argument(
+        "--alerts-health",
+        action="store_true",
+        help="Display Module M7 Early Warning Alert Dispatcher status and subscriber metrics",
+    )
+    parser.add_argument(
+        "--backtest",
+        action="store_true",
+        help="Execute chronological walk-forward model backtesting and extreme event evaluation (Module M8)",
+    )
+    parser.add_argument(
+        "--backtest-drift",
+        action="store_true",
+        help="Display Module M8 statistical drift detector and model degradation diagnostics",
+    )
+    parser.add_argument(
+        "--serve",
+        action="store_true",
+        help="Launch Module M9 FastAPI REST API Server (Uvicorn)",
+    )
+    parser.add_argument(
+        "--port",
+        type=int,
+        default=8000,
+        help="Port to bind the REST API server (default: 8000)",
+    )
+    parser.add_argument(
+        "--host",
+        type=str,
+        default="0.0.0.0",
+        help="Host address to bind the REST API server (default: 0.0.0.0)",
+    )
 
     args = parser.parse_args()
+
+    if args.backtest:
+        from backtesting.interface import run_backtest
+        print("Executing out-of-band chronological walk-forward backtest (Module M8)...")
+        results = run_backtest(export_csv=True)
+        print(f"Backtest completed across {results['canonical_zones_evaluated']} canonical zones.")
+        print(json.dumps(results, indent=2))
+        return
+
+    if args.backtest_drift:
+        from backtesting.interface import get_drift_status
+        print(json.dumps(get_drift_status(), indent=2))
+        return
+
+    if args.alerts_health:
+        from alerts.interface import get_alerts_health
+        print(json.dumps(get_alerts_health(), indent=2))
+        return
+
+    if args.dispatch_alerts:
+        from alerts.interface import evaluate_and_dispatch_alerts
+        print("Evaluating multi-hazard thresholds across all 241 Lahore zones (Module M7)...")
+        result = evaluate_and_dispatch_alerts(force_reevaluate=True)
+        print(f"Triggered {result['total_new_alerts_triggered']} alerts | Dispatched {result['total_dispatches_sent']} notifications.")
+        print(json.dumps(result, indent=2))
+        return
+
+    if args.serve:
+        import uvicorn
+        print("==================================================")
+        print(f"  Starting AeroCast Module M9 REST API Server")
+        print(f"  Listening on http://{args.host}:{args.port}")
+        print(f"  Interactive Swagger Docs: http://localhost:{args.port}/docs")
+        print("==================================================")
+        uvicorn.run("api.app:app", host=args.host, port=args.port, reload=False)
+        return
+
+    if args.flood_health:
+        from flood.interface import get_flood_health
+        print(json.dumps(get_flood_health(), indent=2))
+        return
+
+    if args.flood:
+        from flood.interface import get_all_zones_flood_risk
+        print("Computing Module M4 Flash Flood Risk scores across all 241 Lahore zones...")
+        flood_scores = get_all_zones_flood_risk(horizon_hours=24, allow_cache=False)
+        print(f"Computed {len(flood_scores)} zone flood risk scores.")
+        sample_keys = list(flood_scores.keys())[:3]
+        sample_output = {k: flood_scores[k] for k in sample_keys}
+        print(json.dumps(sample_output, indent=2))
+        print(f"... and {len(flood_scores) - 3} more zones scored.")
+        return
+
+    if args.ml_health:
+        from ml.interface import get_ml_health
+        print(json.dumps(get_ml_health(), indent=2))
+        return
+
+    if args.train_ml:
+        from ml.interface import train_and_save_models
+        print("Training Module M3 AQI forecasting model (XGBoost 24h Regressor)...")
+        metrics = train_and_save_models()
+        print(json.dumps(metrics, indent=2))
+        return
+
+    if args.forecast:
+        from ml.interface import get_all_aqi_forecasts
+        horizon = args.forecast
+        print(f"Generating {horizon}-hour advance AQI forecasts across 241 Lahore zones...")
+        forecasts = get_all_aqi_forecasts(horizon_hours=horizon, allow_cache=False)
+        print(f"Generated {len(forecasts)} forecasts.")
+        sample_keys = list(forecasts.keys())[:3]
+        sample_output = {k: forecasts[k] for k in sample_keys}
+        print(json.dumps(sample_output, indent=2))
+        print(f"... and {len(forecasts) - 3} more zones forecasted.")
+        return
+
+    if args.heat_island:
+        from ml.interface import get_all_heat_island_risk
+        print("Computing Urban Heat Island (UHI) risk scores across 241 Lahore zones...")
+        uhi_scores = get_all_heat_island_risk(allow_cache=False)
+        print(f"Computed {len(uhi_scores)} zone UHI scores.")
+        sample_keys = list(uhi_scores.keys())[:3]
+        sample_output = {k: uhi_scores[k] for k in sample_keys}
+        print(json.dumps(sample_output, indent=2))
+        print(f"... and {len(uhi_scores) - 3} more zones scored.")
+        return
+
+    if args.spatial_health:
+        from spatial.interface import get_spatial_health
+        print(json.dumps(get_spatial_health(), indent=2))
+        return
+
+    if args.spatial:
+        from spatial.interface import get_interpolated_grid
+        var_name = args.spatial
+        print(f"Running M2 Spatial Kriging interpolation for '{var_name}' across all 241 zones...")
+        grid = get_interpolated_grid(var_name, allow_cache=False, force_recompute=True)
+        print(f"Successfully interpolated {len(grid)} zones.")
+        sample_keys = list(grid.keys())[:3]
+        sample_output = {k: grid[k] for k in sample_keys}
+        print(json.dumps(sample_output, indent=2))
+        print(f"... and {len(grid) - 3} more zones cached.")
+        return
 
     if args.query:
         data = get_latest_data(args.query)

@@ -42,10 +42,49 @@ class CopernicusClient:
         self._is_synthetic_dem: bool = False
         self._is_synthetic_ndvi: bool = False
 
+    def is_synthetic_dem(self) -> bool:
+        """Return whether the DEM raster is a synthetic placeholder."""
+        if not HAS_RASTERIO:
+            return True
+        self.ensure_rasters_exist()
+        if not self.dem_path.exists():
+            return True
+        try:
+            with rasterio.open(self.dem_path) as src:
+                tags = src.tags()
+                if tags.get("provenance") == "synthetic":
+                    return True
+                if tags.get("provenance") == "authentic":
+                    return False
+                if src.width == 250 and src.height == 250:
+                    return True
+                return self._is_synthetic_dem
+        except Exception:
+            return True
+
+    def is_synthetic_ndvi(self) -> bool:
+        """Return whether the NDVI raster is a synthetic placeholder."""
+        if not HAS_RASTERIO:
+            return True
+        self.ensure_rasters_exist()
+        if not self.ndvi_path.exists():
+            return True
+        try:
+            with rasterio.open(self.ndvi_path) as src:
+                tags = src.tags()
+                if tags.get("provenance") == "synthetic":
+                    return True
+                if tags.get("provenance") == "authentic":
+                    return False
+                if src.width == 250 and src.height == 250:
+                    return True
+                return self._is_synthetic_ndvi
+        except Exception:
+            return True
+
     def is_synthetic_raster(self) -> bool:
         """Return whether either DEM or NDVI raster is a synthetic placeholder."""
-        self.ensure_rasters_exist()
-        return self._is_synthetic_dem or self._is_synthetic_ndvi or not HAS_RASTERIO
+        return self.is_synthetic_dem() or self.is_synthetic_ndvi()
 
     def ensure_rasters_exist(self):
         """Verify that DEM and NDVI GeoTIFF rasters exist; generate sample rasters if missing."""
