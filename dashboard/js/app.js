@@ -93,11 +93,16 @@ function initMap() {
   // Add Zoom Control to Top Right
   L.control.zoom({ position: 'topright' }).addTo(state.map);
 
-  // Dark Matter Tiles (High contrast, clean geometry)
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a> | AeroCast',
-    subdomains: 'abcd',
-    maxZoom: 19,
+  // High-Contrast Solid Dark Basemap (Esri World Dark Gray Canvas - Clean, no watermark, free)
+  L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
+    attribution: '&copy; Esri, HERE, Garmin, OpenStreetMap contributors | AeroCast',
+    maxZoom: 16,
+  }).addTo(state.map);
+
+  // Reference overlay for clear district labels
+  L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Reference/MapServer/tile/{z}/{y}/{x}', {
+    attribution: '',
+    maxZoom: 16,
   }).addTo(state.map);
 }
 
